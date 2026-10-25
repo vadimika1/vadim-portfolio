@@ -140,8 +140,6 @@ export function Reviews() {
         <dl>
           <div><dt>{t.rating}</dt><dd>{KWORK_STATS.rating}</dd></div>
           <div><dt>{t.orders}</dt><dd>{KWORK_STATS.orders}</dd></div>
-          <div><dt>{t.onTime}</dt><dd>{KWORK_STATS.onTime}</dd></div>
-          <div><dt>{t.repeat}</dt><dd>{KWORK_STATS.repeat}</dd></div>
         </dl>
       </header>
       {lang === 'en' && <p className="reviews-note">Clients wrote these reviews in Russian; quoted as is.</p>}

@@ -47,7 +47,7 @@ export const SERVICES: Service[] = [
   { name: { ru: 'Своя система: кабинет, бронирование, бот', en: 'Custom system: portal, booking, bot' }, price: { ru: 'по задаче', en: 'quoted per task' } },
 ];
 
-export const KWORK_STATS = { rating: '5.0', orders: 5, reviews: 4, onTime: '80 %', repeat: '40 %' };
+export const KWORK_STATS = { rating: '5.0', orders: 5, reviews: 4 };
 
 export type Review = { project: string; author: string; text: string };
 
