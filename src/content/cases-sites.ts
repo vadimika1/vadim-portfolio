@@ -457,6 +457,17 @@ export const SITE_CASES: Case[] = [
     image: '/cases/inga-keren.webp',
   },
   {
+    id: 'inga-keren-fashion',
+    platform: 'tilda',
+    title: { ru: 'Inga Keren — шоурум дизайнерской одежды', en: 'Inga Keren designer clothing showroom' },
+    lead: { ru: 'Второй сайт художницы: онлайн-шоурум одежды с её принтами, связан с сайтом картин', en: 'The artist’s second site: an online showroom of clothing with her prints, linked to the art site' },
+    kinds: ['sites'],
+    did: { ru: ['Сделал сайт на Тильде.'], en: ['Built the site on Tilda.'] },
+    stack: ['Тильда'],
+    url: 'https://ingakeren.ru/',
+    image: '/cases/inga-keren-fashion.webp',
+  },
+  {
     id: 'black-village',
     platform: 'tilda',
     title: { ru: 'Black Village — загородный отель', en: 'Black Village country hotel' },

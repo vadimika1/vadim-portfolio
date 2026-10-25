@@ -69,7 +69,7 @@ export type Case = {
 /** Порядок в «Все проекты»: сначала то, что агентству важнее увидеть, MVP в конце. */
 const ORDER = [
   'booking', 'attribution', 'shotofart', 'mosoblteh', 'laser', 'posle', 'clever', 'chinaparts', 'zet', 'denta',
-  'dctuning', 'hotel', 'coffee', 'premium7hills', 'inga-keren', 'huntiq', 'kursi',
+  'dctuning', 'hotel', 'coffee', 'premium7hills', 'inga-keren', 'inga-keren-fashion', 'huntiq', 'kursi',
   'black-village', 'mosty', 'am-carpets', 'prostranstvo', 'garage43', 'vaynah', 'santehnik', 'tabletools', 'soa-internal', 'marzhinator', 'mini-crm',
   'tg-booking-bot', 'ai-sales-bot',
 ];
