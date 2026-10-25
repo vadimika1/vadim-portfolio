@@ -476,8 +476,7 @@ export const SITE_CASES: Case[] = [
     kinds: ['sites'],
     did: { ru: ['Сделал сайт на Тильде.'], en: ['Built the site on Tilda.'] },
     stack: ['Тильда'],
-    linkNote: { ru: 'Сайт закрыт, скрин из архива портфолио', en: 'The site is closed; screenshot from the portfolio archive' },
-    archive: true,
+    url: 'https://mip-sz.ru/',
     image: '/cases/mosty.webp',
   },
   {
@@ -500,8 +499,7 @@ export const SITE_CASES: Case[] = [
     kinds: ['sites'],
     did: { ru: ['Сделал сайт на Тильде.'], en: ['Built the site on Tilda.'] },
     stack: ['Тильда'],
-    linkNote: { ru: 'Сайт закрыт, скрин из архива портфолио', en: 'The site is closed; screenshot from the portfolio archive' },
-    archive: true,
+    url: 'https://prostranstvo-marketinga.ru/',
     image: '/cases/prostranstvo.webp',
   },
   {
