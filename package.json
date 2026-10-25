@@ -1,0 +1,28 @@
+{
+  "name": "vadim-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc --noEmit && vite build && node scripts/classic.ts dist",
+    "preview": "vite preview",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "sweep": "node scripts/brand-sweep.mjs dist",
+    "resume": "node scripts/resume-html.ts dist/resume-src && echo \"Печать: playwright-cli run-code со скриптом page.pdf для dist/resume-src/{ru,en}.html → public/resume-{ru,en}.pdf\""
+  },
+  "dependencies": {
+    "react": "19.3.0",
+    "react-dom": "19.3.0"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.1",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitejs/plugin-react": "6.1.2",
+    "typescript": "7.0.2",
+    "vite": "8.3.4",
+    "vitest": "5.0.3"
+  }
+}
