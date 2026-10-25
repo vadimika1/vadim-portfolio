@@ -234,7 +234,8 @@ export const SYSTEM_CASES: Case[] = [
       ],
     },
     stack: ['Next.js', 'Fastify', 'Prisma', 'PostgreSQL', 'Redis', 'Docker'],
-    linkNote: { ru: 'MVP, показываю на созвоне', en: 'MVP, shown on a call' },
+    linkNote: { ru: 'MVP: код открыт на GitHub, демо показываю на созвоне', en: 'MVP: the code is on GitHub, demo on a call' },
+    github: 'https://github.com/vadimika1/mini-crm-agency',
   },
   {
     id: 'tg-booking-bot',
@@ -259,7 +260,8 @@ export const SYSTEM_CASES: Case[] = [
       ],
     },
     stack: ['Python', 'aiogram', 'FastAPI', 'PostgreSQL', 'Redis', 'Docker'],
-    linkNote: { ru: 'MVP, показываю на созвоне', en: 'MVP, shown on a call' },
+    linkNote: { ru: 'MVP: код открыт на GitHub, демо показываю на созвоне', en: 'MVP: the code is on GitHub, demo on a call' },
+    github: 'https://github.com/vadimika1/tg-booking-bot',
   },
   {
     id: 'ai-sales-bot',
@@ -282,6 +284,7 @@ export const SYSTEM_CASES: Case[] = [
       ],
     },
     stack: ['Python', 'aiogram', 'FastAPI', 'OpenAI API', 'PostgreSQL', 'Docker'],
-    linkNote: { ru: 'MVP, показываю на созвоне', en: 'MVP, shown on a call' },
+    linkNote: { ru: 'MVP: код открыт на GitHub, демо показываю на созвоне', en: 'MVP: the code is on GitHub, demo on a call' },
+    github: 'https://github.com/vadimika1/ai-sales-assistant-bot',
   },
 ];

@@ -20,7 +20,7 @@ const T = {
     role: 'Веб-разработчик: сайты, внутренние системы, сквозная аналитика',
     desk: 'Открыть рабочий стол VadimXP', other: 'English version', otherHref: '/classic/en/',
     cases: 'Кейсы', systems: 'Системы и сквозная аналитика', task: 'Задача', result: 'Результат', services: 'Услуги и цены', reviews: 'Отзывы с Кворка', contact: 'Связаться',
-    open: 'Открыть сайт', resume: 'Резюме (PDF)',
+    open: 'Открыть сайт', code: 'Код на GitHub', resume: 'Резюме (PDF)',
     contactText: 'Напишите в ICQ на рабочем столе — сообщение придёт мне в Telegram. Или на Кворке и Freelancer.',
     stats: `Рейтинг ${KWORK_STATS.rating}, заказов ${KWORK_STATS.orders}, отзывов ${KWORK_STATS.reviews}`,
   },
@@ -30,7 +30,7 @@ const T = {
     role: 'Web developer: websites, internal systems, end-to-end analytics',
     desk: 'Open the VadimXP desktop', other: 'Русская версия', otherHref: '/classic/',
     cases: 'Cases', systems: 'Systems and end-to-end analytics', task: 'The brief', result: 'Result', services: 'Services and prices', reviews: 'Reviews on Kwork', contact: 'Contact',
-    open: 'Open site', resume: 'Resume (PDF)',
+    open: 'Open site', code: 'Code on GitHub', resume: 'Resume (PDF)',
     contactText: 'Message me via ICQ on the desktop; it lands in my Telegram. Or reach me on Kwork and Freelancer.',
     stats: `Rating ${KWORK_STATS.rating}, ${KWORK_STATS.orders} orders, ${KWORK_STATS.reviews} reviews`,
   },
@@ -67,6 +67,7 @@ function page(lang: Lang): string {
           ${c.result ? `<p><b>${t.result}:</b> ${esc(c.result[lang])}</p>` : ''}
           ${c.url ? `<p><a href="${esc(c.url)}" rel="noopener">${t.open}: ${esc(new URL(c.url).host.replace(/^www\./, ''))}</a>${c.linkNote ? ` <small>${esc(c.linkNote[lang])}</small>` : ''}</p>` : ''}
           ${!c.url && c.linkNote ? `<p><small>${esc(c.linkNote[lang])}</small></p>` : ''}
+          ${c.github ? `<p><a href="${esc(c.github)}" rel="noopener">${t.code}</a></p>` : ''}
           <small>${esc(c.stack.join(', '))}</small>
         </div>
       </article>`;
