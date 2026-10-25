@@ -70,7 +70,7 @@ export type Case = {
 const ORDER = [
   'booking', 'attribution', 'shotofart', 'mosoblteh', 'laser', 'posle', 'clever', 'chinaparts', 'zet', 'denta',
   'dctuning', 'hotel', 'coffee', 'premium7hills', 'inga-keren', 'inga-keren-fashion', 'huntiq', 'kursi',
-  'black-village', 'mosty', 'am-carpets', 'prostranstvo', 'garage43', 'vaynah', 'santehnik', 'tabletools', 'soa-internal', 'marzhinator', 'mini-crm',
+  'black-village', 'mosty', 'am-carpets', 'prostranstvo', 'nv-china', 'garage43', 'vaynah', 'santehnik', 'pur-pudra', 'tabletools', 'soa-internal', 'marzhinator', 'mini-crm',
   'tg-booking-bot', 'ai-sales-bot',
 ];
 const ALL: Case[] = [...SITE_CASES, ...SYSTEM_CASES];
