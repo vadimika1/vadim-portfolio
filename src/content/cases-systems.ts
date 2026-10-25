@@ -173,6 +173,7 @@ export const SYSTEM_CASES: Case[] = [
     },
     stack: ['Next.js', 'TypeScript', 'GSAP', 'Vercel', 'Telegram Bot API'],
     url: 'https://tabletools.ru/demo/',
+    github: 'https://github.com/vadimika1/tabletools-demo',
     image: '/cases/tabletools.webp',
     demo: true,
   },
