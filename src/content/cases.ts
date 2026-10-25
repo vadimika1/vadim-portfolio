@@ -53,6 +53,8 @@ export type Case = {
   url?: string;
   /** Подпись ссылки, если домен в адресе не говорит сам за себя. */
   linkNote?: Text;
+  /** Сайт закрыт или переделан другими: показываем скрин из архива без ссылки. */
+  archive?: true;
   /** Свой скриншот публичной страницы или обезличенный экран; нет — рисуется обложка из значка. */
   image?: string;
   /** «До» для окна Paint: старая версия из веб-архива или боевой сайт на старом дизайне. */
@@ -67,7 +69,8 @@ export type Case = {
 /** Порядок в «Все проекты»: сначала то, что агентству важнее увидеть, MVP в конце. */
 const ORDER = [
   'booking', 'attribution', 'shotofart', 'mosoblteh', 'laser', 'posle', 'clever', 'chinaparts', 'zet', 'denta',
-  'dctuning', 'hotel', 'coffee', 'premium7hills', 'huntiq', 'kursi', 'tabletools', 'soa-internal', 'marzhinator', 'mini-crm',
+  'dctuning', 'hotel', 'coffee', 'premium7hills', 'inga-keren', 'huntiq', 'kursi',
+  'black-village', 'mosty', 'am-carpets', 'prostranstvo', 'garage43', 'vaynah', 'santehnik', 'tabletools', 'soa-internal', 'marzhinator', 'mini-crm',
   'tg-booking-bot', 'ai-sales-bot',
 ];
 const ALL: Case[] = [...SITE_CASES, ...SYSTEM_CASES];

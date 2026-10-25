@@ -25,8 +25,13 @@ describe('данные кейсов', () => {
     for (const p of PLATFORMS) expect(platformCount(p)).toBeGreaterThan(0);
   });
 
-  test('без ссылки: из сайтов только kursi (решение Вадима), остальное — закрытые системы и MVP', () => {
-    expect(CASES.filter((c) => !c.url && c.kinds.includes('sites')).map((c) => c.id)).toEqual(['kursi']);
+  test('без ссылки: из сайтов только kursi (решение Вадима) и архив закрытых сайтов, остальное — закрытые системы и MVP', () => {
+    expect(CASES.filter((c) => !c.url && !c.archive && c.kinds.includes('sites')).map((c) => c.id)).toEqual(['kursi']);
+    for (const c of CASES.filter((x) => x.archive)) {
+      expect(c.url).toBeUndefined();
+      expect(c.linkNote).toBeDefined();
+      expect(c.image).toBeDefined();
+    }
     for (const c of CASES.filter((x) => !x.url && !x.kinds.includes('sites'))) expect(c.linkNote).toBeDefined();
   });
 
