@@ -11,10 +11,13 @@ SITE="${TABLETOOLS_SITE_DIR:-$HOME/Projects/tabletools-site}"
 if [ "$(git -C "$SITE" rev-parse --abbrev-ref HEAD)" != main ]; then
   echo "В $SITE не ветка main: tabletools-site выкладывает только main" >&2; exit 1
 fi
+# В main tabletools-site коммитит и сессия игры (public/garazh): сначала забираем её коммиты, коммитим только public/vadim.
+git -C "$SITE" pull -q --rebase --autostash
 bash "$SITE/scripts/sync-static.sh" vadim
 git -C "$SITE" add public/vadim
 if git -C "$SITE" diff --cached --quiet; then
   echo "Сборка портфолио не изменилась, выкладывать нечего"; exit 0
 fi
-git -C "$SITE" commit -q -m "chore: портфолио $(git -C "$root" rev-parse --short HEAD)"
+git -C "$SITE" commit -q -m "chore: портфолио $(git -C "$root" rev-parse --short HEAD)" -- public/vadim
+git -C "$SITE" push -q
 bash "$SITE/scripts/deploy.sh"
