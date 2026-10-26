@@ -1,22 +1,20 @@
 #!/usr/bin/env bash
-# Выкладка на vadim.tabletools.ru (Vercel, проект vadim-portfolio).
-# Собираем у себя и выкладываем готовую dist статикой: на проде ровно то, что проверено локально.
+# Выкладка на vadim.tabletools.ru. Портфолио живёт внутри проекта Vercel tabletools-site:
+# сборка лежит там в public/vadim/, а next.config.ts отдаёт её на хосте vadim.tabletools.ru.
+# Собираем у себя, кладём сборку в tabletools-site, коммитим её в main и выкладываем tabletools-site.
 # Номер счётчика Метрики — VITE_METRIKA_ID в .env.production.
 set -euo pipefail
 
 root="$(cd "$(dirname "$0")/.." && pwd)"
-cd "$root"
-SCOPE=admin-70536476s-projects
+SITE="${TABLETOOLS_SITE_DIR:-$HOME/Projects/tabletools-site}"
 
-pnpm build
-pnpm sweep
-mkdir -p dist/.vercel
-if [ -f .vercel/project.json ]; then
-  cp .vercel/project.json dist/.vercel/
-else
-  echo "Нет .vercel/project.json: pnpm dlx vercel@latest link --yes --project vadim-portfolio --scope $SCOPE" >&2; exit 1
+if [ "$(git -C "$SITE" rev-parse --abbrev-ref HEAD)" != main ]; then
+  echo "В $SITE не ветка main: tabletools-site выкладывает только main" >&2; exit 1
 fi
-cd dist
-pnpm dlx vercel@latest deploy --prod --yes --scope "$SCOPE"
-# Привязку проекта храним рядом с кодом: vite при сборке очищает dist.
-[ -f .vercel/project.json ] && mkdir -p ../.vercel && cp .vercel/project.json ../.vercel/
+bash "$SITE/scripts/sync-static.sh" vadim
+git -C "$SITE" add public/vadim
+if git -C "$SITE" diff --cached --quiet; then
+  echo "Сборка портфолио не изменилась, выкладывать нечего"; exit 0
+fi
+git -C "$SITE" commit -q -m "chore: портфолио $(git -C "$root" rev-parse --short HEAD)"
+bash "$SITE/scripts/deploy.sh"
